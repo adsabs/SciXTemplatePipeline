@@ -6,6 +6,17 @@ import types
 
 
 def get_schema(app, schema_client, schema_name):
+    """
+    input:
+
+    app: The relevant calling application (can be any class with a logger attirbute.)
+    schema_client: Kafka SchemaRegistryClient
+    schema_name: The name of the AVRO schema
+
+    return:
+
+    AVRO schema (str)
+    """
     try:
         avro_schema = schema_client.get_latest_version(schema_name)
         app.logger.info("Found schema: {}".format(avro_schema.schema.schema_str))
@@ -19,14 +30,15 @@ def get_schema(app, schema_client, schema_name):
 def load_config(proj_home=None, extra_frames=0, app_name=None):
     """
     Loads configuration from config.py and also from local_config.py
-    :param: proj_home - str, location of the home - we'll always try
+
+    :parameter proj_home: - str, location of the home - we'll always try
         to load config files from there. If the location is empty,
         we'll inspect the caller and derive the location of its parent
         folder.
-    :param: extra_frames - int, number of frames to look back; default
+    :parameter extra_frames: - int, number of frames to look back; default
         is 2, which is good when the load_config() is called directly,
         but when called from inside classes, we need to add extra more
-    :return dictionary
+    :return: dictionary
     """
     conf = {}
 

@@ -15,6 +15,17 @@ from TEMPLATE.s3_methods import load_s3
 
 
 def init_pipeline(proj_home):
+    """
+    input:
+    proj_home: The home directory for the Pipeline
+
+    Initializes the relevant python methods
+    app: The main application class
+    schema_client: The Kafka Schema Registry
+    schema: The input schema the pipeline uses
+    consumer: The kafka consumer for the pipeline
+    producer: The kafka producer for the pipeline
+    """
     app = TEMPLATE_APP(proj_home)
     app.schema_client = SchemaRegistryClient({"url": app.config.get("SCHEMA_REGISTRY_URL")})
     schema = utils.get_schema(app, app.schema_client, app.config.get("TEMPLATE_INPUT_SCHEMA"))
@@ -41,7 +52,7 @@ def init_pipeline(proj_home):
 class TEMPLATE_APP:
     @contextmanager
     def session_scope(self):
-        """Provide a transactional scope around a series of operations."""
+        """Provide a transactional scope for postgres."""
         session = self.Session()
         try:
             yield session
@@ -62,6 +73,19 @@ class TEMPLATE_APP:
         self.logger.info("Starting Template Service Logging")
 
     def __init__(self, proj_home):
+        """
+        input:
+        proj_home: The home directory for the Pipeline
+
+        The main application for the pipeline
+        config: The configuration for the pipeline
+        engine: The SQLAlchemy engine
+        logger: The logger for the pipeline
+        schema_client: The kafka schema registry client
+        s3Clients: The S3 providers that the pipeline may interact with
+        Session: The SQLAlchemy session
+        redis: The redis server configuration
+        """
         self.config = utils.load_config(proj_home)
         self.engine = create_engine(self.config.get("SQLALCHEMY_URL"))
         self.logger = None
@@ -76,6 +100,9 @@ class TEMPLATE_APP:
         )
 
     def template_consumer(self, consumer, producer):
+        """
+        Ingests a message from the Pipeline input topic and passes it to the consumer task
+        """
         while True:
             msg = self._consume_from_topic(consumer)
             if msg:
@@ -86,6 +113,15 @@ class TEMPLATE_APP:
                 continue
 
     def template_task(self, msg, producer):
+        """
+        input:
+        msg: The consumed msg from the Pipeline input topic
+        producer: The relevant Pipeline output producer
+
+        The main consumer task for the Pipeline
+        This task will take any consumed messages and pass them to the relevant subprocesses
+        as well as updating postgres and redis.
+        """
         tstamp = datetime.now()
         self.logger.debug("Received message {}".format(msg.value()))
         job_request = msg.value()
@@ -102,7 +138,8 @@ class TEMPLATE_APP:
         )
         self.logger.debug("task_args:{}".format(task_args))
         """
-        JOB code goes here
+
+            Jobs codes go here
 
         """
         db.update_job_status(self, job_request["hash"], status=job_request["status"])

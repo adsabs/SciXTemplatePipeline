@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SciXTEMPLATE.TEMPLATE package &mdash; SciXTemplatePipeline  documentation</title>
+      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/sphinx_highlight.js"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+</head>
+
+<body class="wy-body-for-nav">
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+
+
+          <a href="index.html" class="icon icon-home">
+            SciXTemplatePipeline
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <!-- Local TOC -->
+              <div class="local-toc"><ul>
+<li><a class="reference internal" href="#">SciXTEMPLATE.TEMPLATE package</a><ul>
+<li><a class="reference internal" href="#subpackages">Subpackages</a></li>
+<li><a class="reference internal" href="#submodules">Submodules</a></li>
+<li><a class="reference internal" href="#module-SciXTEMPLATE.TEMPLATE.db">SciXTEMPLATE.TEMPLATE.db module</a><ul>
+<li><a class="reference internal" href="#SciXTEMPLATE.TEMPLATE.db.get_TEMPLATE_record"><code class="docutils literal notranslate"><span class="pre">get_TEMPLATE_record()</span></code></a></li>
+<li><a class="reference internal" href="#SciXTEMPLATE.TEMPLATE.db.get_job_status_by_job_hash"><code class="docutils literal notranslate"><span class="pre">get_job_status_by_job_hash()</span></code></a></li>
+<li><a class="reference internal" href="#SciXTEMPLATE.TEMPLATE.db.update_job_status"><code class="docutils literal notranslate"><span class="pre">update_job_status()</span></code></a></li>
+<li><a class="reference internal" href="#SciXTEMPLATE.TEMPLATE.db.write_TEMPLATE_record"><code class="docutils literal notranslate"><span class="pre">write_TEMPLATE_record()</span></code></a></li>
+<li><a class="reference internal" href="#SciXTEMPLATE.TEMPLATE.db.write_job_status"><code class="docutils literal notranslate"><span class="pre">write_job_status()</span></code></a></li>
+<li><a class="reference internal" href="#SciXTEMPLATE.TEMPLATE.db.write_status_redis"><code class="docutils literal notranslate"><span class="pre">write_status_redis()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#module-SciXTEMPLATE.TEMPLATE.models">SciXTEMPLATE.TEMPLATE.models module</a><ul>
+<li><a class="reference internal" href="#SciXTEMPLATE.TEMPLATE.models.Source"><code class="docutils literal notranslate"><span class="pre">Source</span></code></a><ul>
+<li><a class="reference internal" href="#SciXTEMPLATE.TEMPLATE.models.Source.SYMBOL1"><code class="docutils literal notranslate"><span class="pre">Source.SYMBOL1</span></code></a></li>
+<li><a class="reference internal" href="#SciXTEMPLATE.TEMPLATE.models.Source.SYMBOL2"><code class="docutils literal notranslate"><span class="pre">Source.SYMBOL2</span></code></a></li>
+<li><a class="reference internal" href="#SciXTEMPLATE.TEMPLATE.models.Source.SYMBOL3"><code class="docutils literal notranslate"><span class="pre">Source.SYMBOL3</span></code></a></li>
+<li><a class="reference internal" href="#SciXTEMPLATE.TEMPLATE.models.Source.SYMBOL4"><code class="docutils literal notranslate"><span class="pre">Source.SYMBOL4</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#SciXTEMPLATE.TEMPLATE.models.Status"><code class="docutils literal notranslate"><span class="pre">Status</span></code></a><ul>
+<li><a class="reference internal" href="#SciXTEMPLATE.TEMPLATE.models.Status.Error"><code class="docutils literal notranslate"><span class="pre">Status.Error</span></code></a></li>
+<li><a class="reference internal" href="#SciXTEMPLATE.TEMPLATE.models.Status.Pending"><code class="docutils literal notranslate"><span class="pre">Status.Pending</span></code></a></li>
+<li><a class="reference internal" href="#SciXTEMPLATE.TEMPLATE.models.Status.Processing"><code class="docutils literal notranslate"><span class="pre">Status.Processing</span></code></a></li>
+<li><a class="reference internal" href="#SciXTEMPLATE.TEMPLATE.models.Status.Success"><code class="docutils literal notranslate"><span class="pre">Status.Success</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#SciXTEMPLATE.TEMPLATE.models.TEMPLATE_record"><code class="docutils literal notranslate"><span class="pre">TEMPLATE_record</span></code></a><ul>
+<li><a class="reference internal" href="#SciXTEMPLATE.TEMPLATE.models.TEMPLATE_record.checksum"><code class="docutils literal notranslate"><span class="pre">TEMPLATE_record.checksum</span></code></a></li>
+<li><a class="reference internal" href="#SciXTEMPLATE.TEMPLATE.models.TEMPLATE_record.date"><code class="docutils literal notranslate"><span class="pre">TEMPLATE_record.date</span></code></a></li>
+<li><a class="reference internal" href="#SciXTEMPLATE.TEMPLATE.models.TEMPLATE_record.id"><code class="docutils literal notranslate"><span class="pre">TEMPLATE_record.id</span></code></a></li>
+<li><a class="reference internal" href="#SciXTEMPLATE.TEMPLATE.models.TEMPLATE_record.s3_key"><code class="docutils literal notranslate"><span class="pre">TEMPLATE_record.s3_key</span></code></a></li>
+<li><a class="reference internal" href="#SciXTEMPLATE.TEMPLATE.models.TEMPLATE_record.source"><code class="docutils literal notranslate"><span class="pre">TEMPLATE_record.source</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#SciXTEMPLATE.TEMPLATE.models.gRPC_status"><code class="docutils literal notranslate"><span class="pre">gRPC_status</span></code></a><ul>
+<li><a class="reference internal" href="#SciXTEMPLATE.TEMPLATE.models.gRPC_status.id"><code class="docutils literal notranslate"><span class="pre">gRPC_status.id</span></code></a></li>
+<li><a class="reference internal" href="#SciXTEMPLATE.TEMPLATE.models.gRPC_status.job_hash"><code class="docutils literal notranslate"><span class="pre">gRPC_status.job_hash</span></code></a></li>
+<li><a class="reference internal" href="#SciXTEMPLATE.TEMPLATE.models.gRPC_status.job_request"><code class="docutils literal notranslate"><span class="pre">gRPC_status.job_request</span></code></a></li>
+<li><a class="reference internal" href="#SciXTEMPLATE.TEMPLATE.models.gRPC_status.status"><code class="docutils literal notranslate"><span class="pre">gRPC_status.status</span></code></a></li>
+<li><a class="reference internal" href="#SciXTEMPLATE.TEMPLATE.models.gRPC_status.timestamp"><code class="docutils literal notranslate"><span class="pre">gRPC_status.timestamp</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#module-SciXTEMPLATE.TEMPLATE.s3_methods">SciXTEMPLATE.TEMPLATE.s3_methods module</a><ul>
+<li><a class="reference internal" href="#SciXTEMPLATE.TEMPLATE.s3_methods.load_s3"><code class="docutils literal notranslate"><span class="pre">load_s3</span></code></a><ul>
+<li><a class="reference internal" href="#SciXTEMPLATE.TEMPLATE.s3_methods.load_s3.load_s3_providers"><code class="docutils literal notranslate"><span class="pre">load_s3.load_s3_providers()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#SciXTEMPLATE.TEMPLATE.s3_methods.s3_methods"><code class="docutils literal notranslate"><span class="pre">s3_methods</span></code></a><ul>
+<li><a class="reference internal" href="#SciXTEMPLATE.TEMPLATE.s3_methods.s3_methods.write_object_s3"><code class="docutils literal notranslate"><span class="pre">s3_methods.write_object_s3()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#SciXTEMPLATE.TEMPLATE.s3_methods.s3_provider"><code class="docutils literal notranslate"><span class="pre">s3_provider</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#module-SciXTEMPLATE.TEMPLATE.template">SciXTEMPLATE.TEMPLATE.template module</a><ul>
+<li><a class="reference internal" href="#SciXTEMPLATE.TEMPLATE.template.TEMPLATE_APP"><code class="docutils literal notranslate"><span class="pre">TEMPLATE_APP</span></code></a><ul>
+<li><a class="reference internal" href="#SciXTEMPLATE.TEMPLATE.template.TEMPLATE_APP.session_scope"><code class="docutils literal notranslate"><span class="pre">TEMPLATE_APP.session_scope()</span></code></a></li>
+<li><a class="reference internal" href="#SciXTEMPLATE.TEMPLATE.template.TEMPLATE_APP.template_consumer"><code class="docutils literal notranslate"><span class="pre">TEMPLATE_APP.template_consumer()</span></code></a></li>
+<li><a class="reference internal" href="#SciXTEMPLATE.TEMPLATE.template.TEMPLATE_APP.template_task"><code class="docutils literal notranslate"><span class="pre">TEMPLATE_APP.template_task()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#SciXTEMPLATE.TEMPLATE.template.init_pipeline"><code class="docutils literal notranslate"><span class="pre">init_pipeline()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#module-SciXTEMPLATE.TEMPLATE.utils">SciXTEMPLATE.TEMPLATE.utils module</a><ul>
+<li><a class="reference internal" href="#SciXTEMPLATE.TEMPLATE.utils.conf_update_from_env"><code class="docutils literal notranslate"><span class="pre">conf_update_from_env()</span></code></a></li>
+<li><a class="reference internal" href="#SciXTEMPLATE.TEMPLATE.utils.from_object"><code class="docutils literal notranslate"><span class="pre">from_object()</span></code></a></li>
+<li><a class="reference internal" href="#SciXTEMPLATE.TEMPLATE.utils.get_schema"><code class="docutils literal notranslate"><span class="pre">get_schema()</span></code></a></li>
+<li><a class="reference internal" href="#SciXTEMPLATE.TEMPLATE.utils.load_config"><code class="docutils literal notranslate"><span class="pre">load_config()</span></code></a></li>
+<li><a class="reference internal" href="#SciXTEMPLATE.TEMPLATE.utils.load_module"><code class="docutils literal notranslate"><span class="pre">load_module()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#module-SciXTEMPLATE.TEMPLATE">Module contents</a></li>
+</ul>
+</li>
+</ul>
+</div>
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">SciXTemplatePipeline</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">SciXTEMPLATE.TEMPLATE package</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/SciXTEMPLATE.TEMPLATE.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+
+  <section id="scixtemplate-template-package">
+<h1>SciXTEMPLATE.TEMPLATE package<a class="headerlink" href="#scixtemplate-template-package" title="Permalink to this heading"></a></h1>
+<section id="subpackages">
+<h2>Subpackages<a class="headerlink" href="#subpackages" title="Permalink to this heading"></a></h2>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="SciXTEMPLATE.TEMPLATE.base.html">SciXTEMPLATE.TEMPLATE.base package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="SciXTEMPLATE.TEMPLATE.base.html#module-SciXTEMPLATE.TEMPLATE.base">Module contents</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</section>
+<section id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this heading"></a></h2>
+</section>
+<section id="module-SciXTEMPLATE.TEMPLATE.db">
+<span id="scixtemplate-template-db-module"></span><h2>SciXTEMPLATE.TEMPLATE.db module<a class="headerlink" href="#module-SciXTEMPLATE.TEMPLATE.db" title="Permalink to this heading"></a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="SciXTEMPLATE.TEMPLATE.db.get_TEMPLATE_record">
+<span class="sig-prename descclassname"><span class="pre">SciXTEMPLATE.TEMPLATE.db.</span></span><span class="sig-name descname"><span class="pre">get_TEMPLATE_record</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">session</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">record_id</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#SciXTEMPLATE.TEMPLATE.db.get_TEMPLATE_record" title="Permalink to this definition"></a></dt>
+<dd><p>Return record with UUID: record_id</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="SciXTEMPLATE.TEMPLATE.db.get_job_status_by_job_hash">
+<span class="sig-prename descclassname"><span class="pre">SciXTEMPLATE.TEMPLATE.db.</span></span><span class="sig-name descname"><span class="pre">get_job_status_by_job_hash</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cls</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">job_hashes</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">only_status</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#SciXTEMPLATE.TEMPLATE.db.get_job_status_by_job_hash" title="Permalink to this definition"></a></dt>
+<dd><p>Return all updates with job_hash</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="SciXTEMPLATE.TEMPLATE.db.update_job_status">
+<span class="sig-prename descclassname"><span class="pre">SciXTEMPLATE.TEMPLATE.db.</span></span><span class="sig-name descname"><span class="pre">update_job_status</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cls</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">job_hash</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">status</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#SciXTEMPLATE.TEMPLATE.db.update_job_status" title="Permalink to this definition"></a></dt>
+<dd><p>Return all updates with job_hash</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="SciXTEMPLATE.TEMPLATE.db.write_TEMPLATE_record">
+<span class="sig-prename descclassname"><span class="pre">SciXTEMPLATE.TEMPLATE.db.</span></span><span class="sig-name descname"><span class="pre">write_TEMPLATE_record</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cls</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">record_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">date</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">s3_key</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">checksum</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">source</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#SciXTEMPLATE.TEMPLATE.db.write_TEMPLATE_record" title="Permalink to this definition"></a></dt>
+<dd><p>Write harvested record to db.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="SciXTEMPLATE.TEMPLATE.db.write_job_status">
+<span class="sig-prename descclassname"><span class="pre">SciXTEMPLATE.TEMPLATE.db.</span></span><span class="sig-name descname"><span class="pre">write_job_status</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cls</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">job_request</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">only_status</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#SciXTEMPLATE.TEMPLATE.db.write_job_status" title="Permalink to this definition"></a></dt>
+<dd><p>Return all updates with job_hash</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="SciXTEMPLATE.TEMPLATE.db.write_status_redis">
+<span class="sig-prename descclassname"><span class="pre">SciXTEMPLATE.TEMPLATE.db.</span></span><span class="sig-name descname"><span class="pre">write_status_redis</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">redis_instance</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">status</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#SciXTEMPLATE.TEMPLATE.db.write_status_redis" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</section>
+<section id="module-SciXTEMPLATE.TEMPLATE.models">
+<span id="scixtemplate-template-models-module"></span><h2>SciXTEMPLATE.TEMPLATE.models module<a class="headerlink" href="#module-SciXTEMPLATE.TEMPLATE.models" title="Permalink to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="SciXTEMPLATE.TEMPLATE.models.Source">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">SciXTEMPLATE.TEMPLATE.models.</span></span><span class="sig-name descname"><span class="pre">Source</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#SciXTEMPLATE.TEMPLATE.models.Source" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Enum</span></code></p>
+<p>An enumeration.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="SciXTEMPLATE.TEMPLATE.models.Source.SYMBOL1">
+<span class="sig-name descname"><span class="pre">SYMBOL1</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span></em><a class="headerlink" href="#SciXTEMPLATE.TEMPLATE.models.Source.SYMBOL1" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="SciXTEMPLATE.TEMPLATE.models.Source.SYMBOL2">
+<span class="sig-name descname"><span class="pre">SYMBOL2</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">2</span></em><a class="headerlink" href="#SciXTEMPLATE.TEMPLATE.models.Source.SYMBOL2" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="SciXTEMPLATE.TEMPLATE.models.Source.SYMBOL3">
+<span class="sig-name descname"><span class="pre">SYMBOL3</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">3</span></em><a class="headerlink" href="#SciXTEMPLATE.TEMPLATE.models.Source.SYMBOL3" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="SciXTEMPLATE.TEMPLATE.models.Source.SYMBOL4">
+<span class="sig-name descname"><span class="pre">SYMBOL4</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">4</span></em><a class="headerlink" href="#SciXTEMPLATE.TEMPLATE.models.Source.SYMBOL4" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="SciXTEMPLATE.TEMPLATE.models.Status">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">SciXTEMPLATE.TEMPLATE.models.</span></span><span class="sig-name descname"><span class="pre">Status</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#SciXTEMPLATE.TEMPLATE.models.Status" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Enum</span></code></p>
+<p>An enumeration.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="SciXTEMPLATE.TEMPLATE.models.Status.Error">
+<span class="sig-name descname"><span class="pre">Error</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">3</span></em><a class="headerlink" href="#SciXTEMPLATE.TEMPLATE.models.Status.Error" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="SciXTEMPLATE.TEMPLATE.models.Status.Pending">
+<span class="sig-name descname"><span class="pre">Pending</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span></em><a class="headerlink" href="#SciXTEMPLATE.TEMPLATE.models.Status.Pending" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="SciXTEMPLATE.TEMPLATE.models.Status.Processing">
+<span class="sig-name descname"><span class="pre">Processing</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">2</span></em><a class="headerlink" href="#SciXTEMPLATE.TEMPLATE.models.Status.Processing" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="SciXTEMPLATE.TEMPLATE.models.Status.Success">
+<span class="sig-name descname"><span class="pre">Success</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">4</span></em><a class="headerlink" href="#SciXTEMPLATE.TEMPLATE.models.Status.Success" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="SciXTEMPLATE.TEMPLATE.models.TEMPLATE_record">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">SciXTEMPLATE.TEMPLATE.models.</span></span><span class="sig-name descname"><span class="pre">TEMPLATE_record</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#SciXTEMPLATE.TEMPLATE.models.TEMPLATE_record" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Base</span></code></p>
+<p>ArXiV records table
+table containing the relevant information for harvested arxiv records.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="SciXTEMPLATE.TEMPLATE.models.TEMPLATE_record.checksum">
+<span class="sig-name descname"><span class="pre">checksum</span></span><a class="headerlink" href="#SciXTEMPLATE.TEMPLATE.models.TEMPLATE_record.checksum" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="SciXTEMPLATE.TEMPLATE.models.TEMPLATE_record.date">
+<span class="sig-name descname"><span class="pre">date</span></span><a class="headerlink" href="#SciXTEMPLATE.TEMPLATE.models.TEMPLATE_record.date" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="SciXTEMPLATE.TEMPLATE.models.TEMPLATE_record.id">
+<span class="sig-name descname"><span class="pre">id</span></span><a class="headerlink" href="#SciXTEMPLATE.TEMPLATE.models.TEMPLATE_record.id" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="SciXTEMPLATE.TEMPLATE.models.TEMPLATE_record.s3_key">
+<span class="sig-name descname"><span class="pre">s3_key</span></span><a class="headerlink" href="#SciXTEMPLATE.TEMPLATE.models.TEMPLATE_record.s3_key" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="SciXTEMPLATE.TEMPLATE.models.TEMPLATE_record.source">
+<span class="sig-name descname"><span class="pre">source</span></span><a class="headerlink" href="#SciXTEMPLATE.TEMPLATE.models.TEMPLATE_record.source" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="SciXTEMPLATE.TEMPLATE.models.gRPC_status">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">SciXTEMPLATE.TEMPLATE.models.</span></span><span class="sig-name descname"><span class="pre">gRPC_status</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#SciXTEMPLATE.TEMPLATE.models.gRPC_status" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Base</span></code></p>
+<p>gRPC table
+table containing the given status of every job passed through the gRPC API</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="SciXTEMPLATE.TEMPLATE.models.gRPC_status.id">
+<span class="sig-name descname"><span class="pre">id</span></span><a class="headerlink" href="#SciXTEMPLATE.TEMPLATE.models.gRPC_status.id" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="SciXTEMPLATE.TEMPLATE.models.gRPC_status.job_hash">
+<span class="sig-name descname"><span class="pre">job_hash</span></span><a class="headerlink" href="#SciXTEMPLATE.TEMPLATE.models.gRPC_status.job_hash" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="SciXTEMPLATE.TEMPLATE.models.gRPC_status.job_request">
+<span class="sig-name descname"><span class="pre">job_request</span></span><a class="headerlink" href="#SciXTEMPLATE.TEMPLATE.models.gRPC_status.job_request" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="SciXTEMPLATE.TEMPLATE.models.gRPC_status.status">
+<span class="sig-name descname"><span class="pre">status</span></span><a class="headerlink" href="#SciXTEMPLATE.TEMPLATE.models.gRPC_status.status" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="SciXTEMPLATE.TEMPLATE.models.gRPC_status.timestamp">
+<span class="sig-name descname"><span class="pre">timestamp</span></span><a class="headerlink" href="#SciXTEMPLATE.TEMPLATE.models.gRPC_status.timestamp" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-SciXTEMPLATE.TEMPLATE.s3_methods">
+<span id="scixtemplate-template-s3-methods-module"></span><h2>SciXTEMPLATE.TEMPLATE.s3_methods module<a class="headerlink" href="#module-SciXTEMPLATE.TEMPLATE.s3_methods" title="Permalink to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="SciXTEMPLATE.TEMPLATE.s3_methods.load_s3">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">SciXTEMPLATE.TEMPLATE.s3_methods.</span></span><span class="sig-name descname"><span class="pre">load_s3</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">config</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#SciXTEMPLATE.TEMPLATE.s3_methods.load_s3" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>A wrapper class to load multiple S3 providers</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="SciXTEMPLATE.TEMPLATE.s3_methods.load_s3.load_s3_providers">
+<span class="sig-name descname"><span class="pre">load_s3_providers</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">config</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#SciXTEMPLATE.TEMPLATE.s3_methods.load_s3.load_s3_providers" title="Permalink to this definition"></a></dt>
+<dd><p>Loops over all providers specified in config and returns them as a dict</p>
+<p>input:</p>
+<p>config: The imported Pipeline configuration</p>
+<p>return:</p>
+<p>provider_dict: a dictionary with entries of the form “PROVIDER_NAME”: class s3_provider</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="SciXTEMPLATE.TEMPLATE.s3_methods.s3_methods">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">SciXTEMPLATE.TEMPLATE.s3_methods.</span></span><span class="sig-name descname"><span class="pre">s3_methods</span></span><a class="headerlink" href="#SciXTEMPLATE.TEMPLATE.s3_methods.s3_methods" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Base class for interacting with S3 providers</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="SciXTEMPLATE.TEMPLATE.s3_methods.s3_methods.write_object_s3">
+<span class="sig-name descname"><span class="pre">write_object_s3</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">file_bytes</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">object_name</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#SciXTEMPLATE.TEMPLATE.s3_methods.s3_methods.write_object_s3" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="SciXTEMPLATE.TEMPLATE.s3_methods.s3_provider">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">SciXTEMPLATE.TEMPLATE.s3_methods.</span></span><span class="sig-name descname"><span class="pre">s3_provider</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">provider</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">config</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#SciXTEMPLATE.TEMPLATE.s3_methods.s3_provider" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="#SciXTEMPLATE.TEMPLATE.s3_methods.s3_methods" title="SciXTEMPLATE.TEMPLATE.s3_methods.s3_methods"><code class="xref py py-class docutils literal notranslate"><span class="pre">s3_methods</span></code></a></p>
+<p>Class for interacting with a particular S3 provider</p>
+</dd></dl>
+
+</section>
+<section id="module-SciXTEMPLATE.TEMPLATE.template">
+<span id="scixtemplate-template-template-module"></span><h2>SciXTEMPLATE.TEMPLATE.template module<a class="headerlink" href="#module-SciXTEMPLATE.TEMPLATE.template" title="Permalink to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="SciXTEMPLATE.TEMPLATE.template.TEMPLATE_APP">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">SciXTEMPLATE.TEMPLATE.template.</span></span><span class="sig-name descname"><span class="pre">TEMPLATE_APP</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">proj_home</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#SciXTEMPLATE.TEMPLATE.template.TEMPLATE_APP" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="SciXTEMPLATE.TEMPLATE.template.TEMPLATE_APP.session_scope">
+<span class="sig-name descname"><span class="pre">session_scope</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#SciXTEMPLATE.TEMPLATE.template.TEMPLATE_APP.session_scope" title="Permalink to this definition"></a></dt>
+<dd><p>Provide a transactional scope for postgres.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="SciXTEMPLATE.TEMPLATE.template.TEMPLATE_APP.template_consumer">
+<span class="sig-name descname"><span class="pre">template_consumer</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">consumer</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">producer</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#SciXTEMPLATE.TEMPLATE.template.TEMPLATE_APP.template_consumer" title="Permalink to this definition"></a></dt>
+<dd><p>Ingests a message from the Pipeline input topic and passes it to the consumer task</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="SciXTEMPLATE.TEMPLATE.template.TEMPLATE_APP.template_task">
+<span class="sig-name descname"><span class="pre">template_task</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">msg</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">producer</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#SciXTEMPLATE.TEMPLATE.template.TEMPLATE_APP.template_task" title="Permalink to this definition"></a></dt>
+<dd><p>input:
+msg: The consumed msg from the Pipeline input topic
+producer: The relevant Pipeline output producer</p>
+<p>The main consumer task for the Pipeline
+This task will take any consumed messages and pass them to the relevant subprocesses
+as well as updating postgres and redis.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="SciXTEMPLATE.TEMPLATE.template.init_pipeline">
+<span class="sig-prename descclassname"><span class="pre">SciXTEMPLATE.TEMPLATE.template.</span></span><span class="sig-name descname"><span class="pre">init_pipeline</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">proj_home</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#SciXTEMPLATE.TEMPLATE.template.init_pipeline" title="Permalink to this definition"></a></dt>
+<dd><p>input:
+proj_home: The home directory for the Pipeline</p>
+<p>Initializes the relevant python methods
+app: The main application class
+schema_client: The Kafka Schema Registry
+schema: The input schema the pipeline uses
+consumer: The kafka consumer for the pipeline
+producer: The kafka producer for the pipeline</p>
+</dd></dl>
+
+</section>
+<section id="module-SciXTEMPLATE.TEMPLATE.utils">
+<span id="scixtemplate-template-utils-module"></span><h2>SciXTEMPLATE.TEMPLATE.utils module<a class="headerlink" href="#module-SciXTEMPLATE.TEMPLATE.utils" title="Permalink to this heading"></a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="SciXTEMPLATE.TEMPLATE.utils.conf_update_from_env">
+<span class="sig-prename descclassname"><span class="pre">SciXTEMPLATE.TEMPLATE.utils.</span></span><span class="sig-name descname"><span class="pre">conf_update_from_env</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">app_name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">conf</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#SciXTEMPLATE.TEMPLATE.utils.conf_update_from_env" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="SciXTEMPLATE.TEMPLATE.utils.from_object">
+<span class="sig-prename descclassname"><span class="pre">SciXTEMPLATE.TEMPLATE.utils.</span></span><span class="sig-name descname"><span class="pre">from_object</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">from_obj</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">to_obj</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#SciXTEMPLATE.TEMPLATE.utils.from_object" title="Permalink to this definition"></a></dt>
+<dd><p>Updates the values from the given object.  An object can be of one
+of the following two types:
+Objects are usually either modules or classes.
+Just the uppercase variables in that object are stored in the config.
+:param obj: an import name or object</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="SciXTEMPLATE.TEMPLATE.utils.get_schema">
+<span class="sig-prename descclassname"><span class="pre">SciXTEMPLATE.TEMPLATE.utils.</span></span><span class="sig-name descname"><span class="pre">get_schema</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">app</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">schema_client</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">schema_name</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#SciXTEMPLATE.TEMPLATE.utils.get_schema" title="Permalink to this definition"></a></dt>
+<dd><p>input:</p>
+<p>app: The relevant calling application (can be any class with a logger attirbute.)
+schema_client: Kafka SchemaRegistryClient
+schema_name: The name of the AVRO schema</p>
+<p>return:</p>
+<p>AVRO schema (str)</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="SciXTEMPLATE.TEMPLATE.utils.load_config">
+<span class="sig-prename descclassname"><span class="pre">SciXTEMPLATE.TEMPLATE.utils.</span></span><span class="sig-name descname"><span class="pre">load_config</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">proj_home</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">extra_frames</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">app_name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#SciXTEMPLATE.TEMPLATE.utils.load_config" title="Permalink to this definition"></a></dt>
+<dd><p>Loads configuration from config.py and also from local_config.py
+:param: proj_home - str, location of the home - we’ll always try</p>
+<blockquote>
+<div><p>to load config files from there. If the location is empty,
+we’ll inspect the caller and derive the location of its parent
+folder.</p>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Param<span class="colon">:</span></dt>
+<dd class="field-odd"><p>extra_frames - int, number of frames to look back; default
+is 2, which is good when the load_config() is called directly,
+but when called from inside classes, we need to add extra more</p>
+</dd>
+</dl>
+<p>:return dictionary</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="SciXTEMPLATE.TEMPLATE.utils.load_module">
+<span class="sig-prename descclassname"><span class="pre">SciXTEMPLATE.TEMPLATE.utils.</span></span><span class="sig-name descname"><span class="pre">load_module</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filename</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#SciXTEMPLATE.TEMPLATE.utils.load_module" title="Permalink to this definition"></a></dt>
+<dd><p>Loads module, first from config.py then from local_config.py
+:return dictionary</p>
+</dd></dl>
+
+</section>
+<section id="module-SciXTEMPLATE.TEMPLATE">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-SciXTEMPLATE.TEMPLATE" title="Permalink to this heading"></a></h2>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2023, SAO/NASA ADS.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+</body>
+</html>

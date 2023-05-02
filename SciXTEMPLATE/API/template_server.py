@@ -89,7 +89,7 @@ class Template(TemplateInitServicer):
 
     @contextmanager
     def session_scope(self):
-        """Provide a transactional scope around a series of operations."""
+        """Provide a transactional scope for postgres."""
         session = self.Session()
         try:
             yield session
