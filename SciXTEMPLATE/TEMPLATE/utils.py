@@ -6,6 +6,17 @@ import types
 
 
 def get_schema(app, schema_client, schema_name):
+    """
+    input:
+
+    app: The relevant calling application (can be any class with a logger attirbute.)
+    schema_client: Kafka SchemaRegistryClient
+    schema_name: The name of the AVRO schema
+
+    return:
+
+    AVRO schema (str)
+    """
     try:
         avro_schema = schema_client.get_latest_version(schema_name)
         app.logger.info("Found schema: {}".format(avro_schema.schema.schema_str))

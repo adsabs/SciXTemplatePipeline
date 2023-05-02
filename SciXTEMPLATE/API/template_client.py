@@ -66,7 +66,6 @@ def input_parser(cli_args):
 
 def output_message(args):
     s = {}
-    # Read from an async generator
     if args.action == "TEMPLATE_INIT":
         if args.job_args:
             task_args = json.loads(args.job_args)

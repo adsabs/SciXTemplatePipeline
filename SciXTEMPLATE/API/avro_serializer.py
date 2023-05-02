@@ -8,10 +8,25 @@ from avro.schema import parse
 
 class AvroSerialHelper:
     def __init__(self, schema, logger=None):
+        """
+        input:
+
+        schema: The AVRO schema (str)
+        logger: Application logger
+        """
         self.schema = parse(schema)
         self.logger = logger
 
     def avro_serializer(self, msg):
+        """
+        input:
+
+        msg: the json representation of the AVRO message
+
+        returns:
+
+        serialized message (bitstream)
+        """
         writer = avro.io.DatumWriter(self.schema)
         bytes_writer = io.BytesIO()
         encoder = avro.io.BinaryEncoder(bytes_writer)
@@ -24,6 +39,15 @@ class AvroSerialHelper:
             sys.exit()
 
     def avro_deserializer(self, raw_bytes):
+        """
+        input:
+
+        raw_bytes: The raw bitstream of an incoming AVRO message
+
+        returns:
+
+        The json representation of the AVRO message
+        """
         if self.logger:
             self.logger.debug(raw_bytes)
         bytes_reader = io.BytesIO(raw_bytes)

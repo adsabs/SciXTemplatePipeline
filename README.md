@@ -72,3 +72,7 @@ python3 API/template_client.py TEMPLATE_INIT --task "SYMBOL1" --task_args '{"ing
 #This command asks the server to check on the current status of a job with <job_id>
 python3 API/template_client.py TEMPLATE_MONITOR --job_id '<job_id>'
 ```
+
+## Maintainers
+
+First Last
