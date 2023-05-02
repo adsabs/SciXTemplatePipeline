@@ -41,7 +41,7 @@ def get_job_status_by_job_hash(cls, job_hashes, only_status=None):
 
 def _get_job_by_job_hash(session, job_hash, only_status=None):
     """
-    Return all updates with job_hash
+    Return all updates with job_hash internal function
     """
     logger.info("Opening Session")
 
@@ -65,7 +65,7 @@ def _get_job_by_job_hash(session, job_hash, only_status=None):
 
 def write_job_status(cls, job_request, only_status=None):
     """
-    Return all updates with job_hash
+    Write new status for job to db
     """
     with cls.session_scope() as session:
         job_status = models.gRPC_status()
@@ -80,7 +80,7 @@ def write_job_status(cls, job_request, only_status=None):
 
 def update_job_status(cls, job_hash, status=None):
     """
-    Return all updates with job_hash
+    Update status for job previously written to db
     """
     updated = False
     with cls.session_scope() as session:

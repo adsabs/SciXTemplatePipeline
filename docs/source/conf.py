@@ -11,8 +11,8 @@ import sys
 sys.path.insert(0, os.path.abspath("../../SciXTEMPLATE"))
 
 project = "SciXTemplatePipeline"
-copyright = "2023, Taylor Jacovich"
-author = "Taylor Jacovich"
+copyright = "2023, SAO/NASA ADS"
+author = "SAO/NASA ADS"
 
 # -- General configuration ---------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#general-configuration
@@ -29,5 +29,5 @@ exclude_patterns = []
 # -- Options for HTML output -------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#options-for-html-output
 
-html_theme = "alabaster"
+html_theme = "sphinx_rtd_theme"
 html_static_path = ["_static"]

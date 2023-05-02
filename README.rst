@@ -1,18 +1,3 @@
-.. SciXTemplatePipeline documentation master file, created by
-   sphinx-quickstart on Tue May  2 15:24:55 2023.
-   You can adapt this file completely to your liking, but it should at least
-   contain the root `toctree` directive.
-
-SciXTemplatePipeline
-================================================
-
-.. toctree::
-   :maxdepth: 2
-   :caption: Contents:
-
-
-
-
 .. role:: raw-html-m2r(raw)
    :format: html
 
@@ -131,10 +116,3 @@ Maintainers
 -----------
 
 First Last
-
-Indices and tables
-==================
-
-* :ref:`genindex`
-* :ref:`modindex`
-* :ref:`search`
