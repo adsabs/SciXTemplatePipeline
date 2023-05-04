@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SciXTEMPLATE.API.grpc_modules package &mdash; SciXTemplatePipeline  documentation</title>
+      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/sphinx_highlight.js"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+</head>
+
+<body class="wy-body-for-nav">
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+
+
+          <a href="index.html" class="icon icon-home">
+            SciXTemplatePipeline
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <!-- Local TOC -->
+              <div class="local-toc"><ul>
+<li><a class="reference internal" href="#">SciXTEMPLATE.API.grpc_modules package</a><ul>
+<li><a class="reference internal" href="#submodules">Submodules</a></li>
+<li><a class="reference internal" href="#module-SciXTEMPLATE.API.grpc_modules.template_grpc">SciXTEMPLATE.API.grpc_modules.template_grpc module</a><ul>
+<li><a class="reference internal" href="#SciXTEMPLATE.API.grpc_modules.template_grpc.TemplateInit"><code class="docutils literal notranslate"><span class="pre">TemplateInit</span></code></a><ul>
+<li><a class="reference internal" href="#SciXTEMPLATE.API.grpc_modules.template_grpc.TemplateInit.initTemplate"><code class="docutils literal notranslate"><span class="pre">TemplateInit.initTemplate()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#SciXTEMPLATE.API.grpc_modules.template_grpc.TemplateInitServicer"><code class="docutils literal notranslate"><span class="pre">TemplateInitServicer</span></code></a><ul>
+<li><a class="reference internal" href="#SciXTEMPLATE.API.grpc_modules.template_grpc.TemplateInitServicer.initTemplate"><code class="docutils literal notranslate"><span class="pre">TemplateInitServicer.initTemplate()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#SciXTEMPLATE.API.grpc_modules.template_grpc.TemplateInitStub"><code class="docutils literal notranslate"><span class="pre">TemplateInitStub</span></code></a></li>
+<li><a class="reference internal" href="#SciXTEMPLATE.API.grpc_modules.template_grpc.TemplateMonitor"><code class="docutils literal notranslate"><span class="pre">TemplateMonitor</span></code></a><ul>
+<li><a class="reference internal" href="#SciXTEMPLATE.API.grpc_modules.template_grpc.TemplateMonitor.monitorTemplate"><code class="docutils literal notranslate"><span class="pre">TemplateMonitor.monitorTemplate()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#SciXTEMPLATE.API.grpc_modules.template_grpc.TemplateMonitorServicer"><code class="docutils literal notranslate"><span class="pre">TemplateMonitorServicer</span></code></a><ul>
+<li><a class="reference internal" href="#SciXTEMPLATE.API.grpc_modules.template_grpc.TemplateMonitorServicer.monitorTemplate"><code class="docutils literal notranslate"><span class="pre">TemplateMonitorServicer.monitorTemplate()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#SciXTEMPLATE.API.grpc_modules.template_grpc.TemplateMonitorStub"><code class="docutils literal notranslate"><span class="pre">TemplateMonitorStub</span></code></a></li>
+<li><a class="reference internal" href="#SciXTEMPLATE.API.grpc_modules.template_grpc.add_TemplateInitServicer_to_server"><code class="docutils literal notranslate"><span class="pre">add_TemplateInitServicer_to_server()</span></code></a></li>
+<li><a class="reference internal" href="#SciXTEMPLATE.API.grpc_modules.template_grpc.add_TemplateMonitorServicer_to_server"><code class="docutils literal notranslate"><span class="pre">add_TemplateMonitorServicer_to_server()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#module-SciXTEMPLATE.API.grpc_modules">Module contents</a></li>
+</ul>
+</li>
+</ul>
+</div>
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">SciXTemplatePipeline</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">SciXTEMPLATE.API.grpc_modules package</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/SciXTEMPLATE.API.grpc_modules.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+
+  <section id="scixtemplate-api-grpc-modules-package">
+<h1>SciXTEMPLATE.API.grpc_modules package<a class="headerlink" href="#scixtemplate-api-grpc-modules-package" title="Permalink to this heading"></a></h1>
+<section id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this heading"></a></h2>
+</section>
+<section id="module-SciXTEMPLATE.API.grpc_modules.template_grpc">
+<span id="scixtemplate-api-grpc-modules-template-grpc-module"></span><h2>SciXTEMPLATE.API.grpc_modules.template_grpc module<a class="headerlink" href="#module-SciXTEMPLATE.API.grpc_modules.template_grpc" title="Permalink to this heading"></a></h2>
+<p>Client and server classes for gRPC services.</p>
+<dl class="py class">
+<dt class="sig sig-object py" id="SciXTEMPLATE.API.grpc_modules.template_grpc.TemplateInit">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">SciXTEMPLATE.API.grpc_modules.template_grpc.</span></span><span class="sig-name descname"><span class="pre">TemplateInit</span></span><a class="headerlink" href="#SciXTEMPLATE.API.grpc_modules.template_grpc.TemplateInit" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>The definition of the Template gRPC API and stream connections.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="SciXTEMPLATE.API.grpc_modules.template_grpc.TemplateInit.initTemplate">
+<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">initTemplate</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">target</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">options</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">()</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">channel_credentials</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">call_credentials</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">insecure</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">compression</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">wait_for_ready</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">timeout</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">metadata</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#SciXTEMPLATE.API.grpc_modules.template_grpc.TemplateInit.initTemplate" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="SciXTEMPLATE.API.grpc_modules.template_grpc.TemplateInitServicer">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">SciXTEMPLATE.API.grpc_modules.template_grpc.</span></span><span class="sig-name descname"><span class="pre">TemplateInitServicer</span></span><a class="headerlink" href="#SciXTEMPLATE.API.grpc_modules.template_grpc.TemplateInitServicer" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>The servicer definition for initiating jobs with the Template pipeline.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="SciXTEMPLATE.API.grpc_modules.template_grpc.TemplateInitServicer.initTemplate">
+<span class="sig-name descname"><span class="pre">initTemplate</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">context</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#SciXTEMPLATE.API.grpc_modules.template_grpc.TemplateInitServicer.initTemplate" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="SciXTEMPLATE.API.grpc_modules.template_grpc.TemplateInitStub">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">SciXTEMPLATE.API.grpc_modules.template_grpc.</span></span><span class="sig-name descname"><span class="pre">TemplateInitStub</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">channel</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">avroserialhelper</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#SciXTEMPLATE.API.grpc_modules.template_grpc.TemplateInitStub" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>The Stub for connecting to the Template init service.</p>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="SciXTEMPLATE.API.grpc_modules.template_grpc.TemplateMonitor">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">SciXTEMPLATE.API.grpc_modules.template_grpc.</span></span><span class="sig-name descname"><span class="pre">TemplateMonitor</span></span><a class="headerlink" href="#SciXTEMPLATE.API.grpc_modules.template_grpc.TemplateMonitor" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>The definition of the Monitor gRPC API and stream connections.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="SciXTEMPLATE.API.grpc_modules.template_grpc.TemplateMonitor.monitorTemplate">
+<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">monitorTemplate</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">target</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">options</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">()</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">channel_credentials</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">call_credentials</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">insecure</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">compression</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">wait_for_ready</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">timeout</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">metadata</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#SciXTEMPLATE.API.grpc_modules.template_grpc.TemplateMonitor.monitorTemplate" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="SciXTEMPLATE.API.grpc_modules.template_grpc.TemplateMonitorServicer">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">SciXTEMPLATE.API.grpc_modules.template_grpc.</span></span><span class="sig-name descname"><span class="pre">TemplateMonitorServicer</span></span><a class="headerlink" href="#SciXTEMPLATE.API.grpc_modules.template_grpc.TemplateMonitorServicer" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>The servicer definition for monitoring jobs already submitted to the Template pipeline.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="SciXTEMPLATE.API.grpc_modules.template_grpc.TemplateMonitorServicer.monitorTemplate">
+<span class="sig-name descname"><span class="pre">monitorTemplate</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">context</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#SciXTEMPLATE.API.grpc_modules.template_grpc.TemplateMonitorServicer.monitorTemplate" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="SciXTEMPLATE.API.grpc_modules.template_grpc.TemplateMonitorStub">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">SciXTEMPLATE.API.grpc_modules.template_grpc.</span></span><span class="sig-name descname"><span class="pre">TemplateMonitorStub</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">channel</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">avroserialhelper</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#SciXTEMPLATE.API.grpc_modules.template_grpc.TemplateMonitorStub" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>The Stub for connecting to the Template Monitor service.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="SciXTEMPLATE.API.grpc_modules.template_grpc.add_TemplateInitServicer_to_server">
+<span class="sig-prename descclassname"><span class="pre">SciXTEMPLATE.API.grpc_modules.template_grpc.</span></span><span class="sig-name descname"><span class="pre">add_TemplateInitServicer_to_server</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">servicer</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">server</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">avroserialhelper</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#SciXTEMPLATE.API.grpc_modules.template_grpc.add_TemplateInitServicer_to_server" title="Permalink to this definition"></a></dt>
+<dd><p>The actual methods for sending and receiving RPC calls.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="SciXTEMPLATE.API.grpc_modules.template_grpc.add_TemplateMonitorServicer_to_server">
+<span class="sig-prename descclassname"><span class="pre">SciXTEMPLATE.API.grpc_modules.template_grpc.</span></span><span class="sig-name descname"><span class="pre">add_TemplateMonitorServicer_to_server</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">servicer</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">server</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">avroserialhelper</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#SciXTEMPLATE.API.grpc_modules.template_grpc.add_TemplateMonitorServicer_to_server" title="Permalink to this definition"></a></dt>
+<dd><p>The actual methods for sending and receiving RPC calls.</p>
+</dd></dl>
+
+</section>
+<section id="module-SciXTEMPLATE.API.grpc_modules">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-SciXTEMPLATE.API.grpc_modules" title="Permalink to this heading"></a></h2>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2023, SAO/NASA ADS.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+</body>
+</html>
