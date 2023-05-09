@@ -10,6 +10,7 @@ SciXTemplatePipeline
    :maxdepth: 2
    :caption: Contents:
 
+   SciXTEMPLATE
 
 
 
