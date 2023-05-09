@@ -12,7 +12,7 @@ SciXTemplatePipeline
 
    SciXgrpc.repositories
    SciXtest.repositories
-   SciXTEMPLATE
+   modules
 
 .. role:: raw-html-m2r(raw)
    :format: html
@@ -94,7 +94,7 @@ Next, we need to copy config.py to local_config.py and update the environment va
 Launching The Pipeline
 ----------------------
 
-All SciX Pipelines require librdkafka be installed. The source can be found here. Installation on most `nix systems can be done by running the following:
+All SciX Pipelines require librdkafka be installed. The source can be found here. Installation on most 'nix systems can be done by running the following:
 
 .. code-block:: bash
 
