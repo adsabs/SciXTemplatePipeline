@@ -6,14 +6,6 @@
 The gRPC Backend
 ====================================
 
-.. toctree::
-   :maxdepth: 2
-   :caption: Contents
-
-.. role:: raw-html-m2r(raw)
-   :format: html
-
-
 
 .. image:: https://github.com/tjacovich/SciXTemplateRepository/actions/workflows/python_actions.yml/badge.svg
    :target: https://github.com/tjacovich/SciXTemplateRepository/actions/workflows/python_actions.yml
