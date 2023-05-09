@@ -8,7 +8,7 @@ SciXTemplatePipeline
 
 .. toctree::
    :maxdepth: 2
-   :caption: Contents:
+   :caption: Contents
 
    SciXgrpc.repositories
    SciXtest.repositories

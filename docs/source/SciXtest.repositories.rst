@@ -10,6 +10,8 @@ SciXTemplatePipeline
    :maxdepth: 2
    :caption: Contents
 
+   SciXgrpc.repositories
+   SciXtest.repositories
    SciXTEMPLATE
 
 
