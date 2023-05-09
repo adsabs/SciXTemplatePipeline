@@ -24,20 +24,22 @@ Because we are using ``AVRO`` instead of ``protobufs``, we cannot take advantage
 
 The API classes live in ``grpc_modules/template_grpc.py`` Each endpoint needs a ``Stub``, a ``Servicer``, a function that adds the endpoint to the ``gRPC`` server, as well as a main class that instantiates the grpc stream.
 .. code-block:: python
+
    class TemplateInitStub(object):
-    """The Stub for connecting to the Template init service."""
+      """The Stub for connecting to the Template init service."""
 
-    def __init__(self, channel, avroserialhelper):
-        """Constructor.
+      def __init__(self, channel, avroserialhelper):
+         """Constructor.
+         Args:
+         channel: A grpc.Channel.
 
-        Args:
-            channel: A grpc.Channel.
-        """
-        self.initTemplate = channel.unary_stream(
-            "/templateaapi.TemplateInit/initTemplate",
-            request_serializer=avroserialhelper.avro_serializer,
-            response_deserializer=avroserialhelper.avro_deserializer,
-        )
+         """
+
+         self.initTemplate = channel.unary_stream(
+               "/templateaapi.TemplateInit/initTemplate",
+               request_serializer=avroserialhelper.avro_serializer,
+               response_deserializer=avroserialhelper.avro_deserializer,
+         )
 
 
    class TemplateInitServicer(object):
@@ -51,6 +53,7 @@ The API classes live in ``grpc_modules/template_grpc.py`` Each endpoint needs a 
 
    def add_TemplateInitServicer_to_server(servicer, server, avroserialhelper):
       """The actual methods for sending and receiving RPC calls."""
+
       rpc_method_handlers = {
          "initTemplate": grpc.unary_stream_rpc_method_handler(
                servicer.initTemplate,
