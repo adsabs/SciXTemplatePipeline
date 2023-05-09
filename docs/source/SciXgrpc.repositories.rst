@@ -10,8 +10,6 @@ SciXTemplatePipeline
    :maxdepth: 2
    :caption: Contents
 
-   modules
-
 .. role:: raw-html-m2r(raw)
    :format: html
 
