@@ -8,11 +8,11 @@ SciXTemplatePipeline
 
 .. toctree::
    :maxdepth: 2
-   :caption: Contents:
+   :caption: Contents
+
+   SciXTEMPLATE
 
 
-   test_repositories
-   modules
 
 .. role:: raw-html-m2r(raw)
    :format: html
@@ -28,10 +28,10 @@ SciXTemplatePipeline
    :alt: Coverage Status
 
 
-Setting Up a Development Environment
+The Template Test Environment
 ====================================
 
-Installing dependencies and hooks
+The Template API Tests
 ---------------------------------
 
 **Before running this, make sure to update ``pyproject.toml`` and modify the relevant file names and directories, as well as fill in the bibliographic information for the repository.**
