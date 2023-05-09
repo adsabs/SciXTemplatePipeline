@@ -66,6 +66,11 @@ class TemplateServer(TestCase):
         self.server.stop(None)
 
     def test_Template_server_bad_entry(self):
+        """
+        An initial test to confirm gRPC raises an error if it is given an invalid message to serialize.
+        input:
+            s: AVRO message
+        """
         s = {}
 
         with grpc.insecure_channel(f"localhost:{self.port}") as channel:
@@ -74,6 +79,11 @@ class TemplateServer(TestCase):
                 stub.initTemplate(s)
 
     def test_Template_server_init(self):
+        """
+        A test the of INIT method for the gRPC server
+        input:
+            s: AVRO message: TEMPLATEInputSchema
+        """
         s = {
             "task_args": {
                 "ingest": True,
@@ -91,6 +101,11 @@ class TemplateServer(TestCase):
                 self.assertNotEqual(response.get("hash"), None)
 
     def test_Template_server_init_persistence(self):
+        """
+        A test of the INIT method for the gRPC server with persistence
+        input:
+            s: AVRO message: TEMPLATEInputSchema
+        """
         s = {
             "task_args": {
                 "ingest": True,
@@ -123,6 +138,12 @@ class TemplateServer(TestCase):
                 self.assertEqual(final_response, ["Pending", "Processing", "Success"])
 
     def test_Template_server_init_persistence_error_redis(self):
+        """
+        A test of the INIT method for the gRPC server with persistence
+        where an error is returned by the redis server.
+        input:
+            s: AVRO message: TEMPLATEInputSchema
+        """
         s = {
             "task_args": {
                 "ingest": True,
@@ -155,6 +176,12 @@ class TemplateServer(TestCase):
                 self.assertEqual(final_response, ["Pending", "Processing", "Error"])
 
     def test_Template_server_init_persistence_error_db(self):
+        """
+        A test of the INIT method for the gRPC server with persistence
+        where an error is returned from postgres.
+        input:
+            s: AVRO message: TEMPLATEInputSchema
+        """
         s = {
             "task_args": {
                 "ingest": True,
@@ -187,6 +214,11 @@ class TemplateServer(TestCase):
                 self.assertEqual(final_response, ["Pending", "Error"])
 
     def test_Template_server_monitor(self):
+        """
+        A test of the MONITOR method for the gRPC server
+        input:
+            s: AVRO message: TEMPLATEInputSchema
+        """
         s = {
             "task": "MONITOR",
             "hash": "c98b5b0f5e4dce3197a4a9a26d124d036f293a9a90a18361f475e4f08c19f2da",
@@ -207,6 +239,11 @@ class TemplateServer(TestCase):
                     self.assertEqual(response.get("hash"), s.get("hash"))
 
     def test_Template_server_monitor_persistent_success(self):
+        """
+        A test of the MONITOR method for the gRPC server with persistence
+        input:
+            s: AVRO message: TEMPLATEInputSchema
+        """
         s = {
             "task": "MONITOR",
             "hash": "c98b5b0f5e4dce3197a4a9a26d124d036f293a9a90a18361f475e4f08c19f2da",
@@ -233,6 +270,12 @@ class TemplateServer(TestCase):
                     self.assertEqual(response.get("hash"), s.get("hash"))
 
     def test_Template_server_monitor_persistent_error_db(self):
+        """
+        A test of the MONITOR method for the gRPC server with persistence
+        where an error is returned from postgres.
+        input:
+            s: AVRO message: TEMPLATEInputSchema
+        """
         s = {
             "task": "MONITOR",
             "hash": "c98b5b0f5e4dce3197a4a9a26d124d036f293a9a90a18361f475e4f08c19f2da",
@@ -259,6 +302,12 @@ class TemplateServer(TestCase):
                     self.assertEqual(response.get("hash"), s.get("hash"))
 
     def test_Template_server_monitor_persistent_error_redis(self):
+        """
+        A test of the MONITOR method for the gRPC server with persistence
+        where an error is returned from redis.
+        input:
+            s: AVRO message: TEMPLATEInputSchema
+        """
         s = {
             "task": "MONITOR",
             "hash": "c98b5b0f5e4dce3197a4a9a26d124d036f293a9a90a18361f475e4f08c19f2da",
@@ -287,6 +336,12 @@ class TemplateServer(TestCase):
                 self.assertEqual(final_responses, ["Processing", "Error"])
 
     def test_Template_server_monitor_no_hash(self):
+        """
+        A test of the MONITOR method for the gRPC server with persistence
+        where the job hash was not provided.
+        input:
+            s: AVRO message: TEMPLATEInputSchema
+        """
         s = {
             "task": "MONITOR",
             "hash": None,
@@ -313,6 +368,10 @@ class TemplateServer(TestCase):
                     self.assertEqual(response.get("hash"), s.get("hash"))
 
     def test_Template_server_init_and_monitor(self):
+        """
+        An end-to-end test of the gRPC server that sends an INIT request to the server,
+        and the monitors it with the MONITOR task.
+        """
         cls = Template(self.producer, self.schema, self.schema_client, self.logger.logger)
         s = {
             "task_args": {
