@@ -27,33 +27,27 @@ The API classes live in ``grpc_modules/template_grpc.py`` Each endpoint needs a 
 
    class TemplateInitStub(object):
       """The Stub for connecting to the Template init service."""
-
       def __init__(self, channel, avroserialhelper):
-         """Constructor.
-         Args:
-         channel: A grpc.Channel.
-
-         """
-
+         """Constructor. Args channel A grpc.Channel."""
          self.initTemplate = channel.unary_stream(
                "/templateaapi.TemplateInit/initTemplate",
                request_serializer=avroserialhelper.avro_serializer,
                response_deserializer=avroserialhelper.avro_deserializer,
          )
 
+.. code-block:: python
 
    class TemplateInitServicer(object):
       """The servicer definition for initiating jobs with the Template pipeline."""
-
       def initTemplate(self, request, context):
          context.set_code(grpc.StatusCode.UNIMPLEMENTED)
          context.set_details("Method not implemented!")
          raise NotImplementedError("Method not implemented!")
 
+.. code-block:: python
 
    def add_TemplateInitServicer_to_server(servicer, server, avroserialhelper):
       """The actual methods for sending and receiving RPC calls."""
-
       rpc_method_handlers = {
          "initTemplate": grpc.unary_stream_rpc_method_handler(
                servicer.initTemplate,
@@ -66,10 +60,10 @@ The API classes live in ``grpc_modules/template_grpc.py`` Each endpoint needs a 
       )
       server.add_generic_rpc_handlers((generic_handler,))
 
+.. code-block:: python
 
    class TemplateInit(object):
       """The definition of the Template gRPC API and stream connections."""
-
       @staticmethod
       def initTemplate(
          request,
