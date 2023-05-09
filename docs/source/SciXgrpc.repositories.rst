@@ -26,14 +26,11 @@ The API classes live in ``grpc_modules/template_grpc.py`` Each endpoint needs a 
 .. code-block:: python
 
    class TemplateInitStub(object):
-      """The Stub for connecting to the Template init service."""
       def __init__(self, channel, avroserialhelper):
-         """Constructor. Args channel A grpc.Channel."""
          self.initTemplate = channel.unary_stream(
-               "/templateaapi.TemplateInit/initTemplate",
-               request_serializer=avroserialhelper.avro_serializer,
-               response_deserializer=avroserialhelper.avro_deserializer,
-         )
+            "/templateaapi.TemplateInit/initTemplate",
+            request_serializer=avroserialhelper.avro_serializer,
+            response_deserializer=avroserialhelper.avro_deserializer,)
 
 .. code-block:: python
 
