@@ -10,9 +10,9 @@ SciXTemplatePipeline
    :maxdepth: 2
    :caption: Contents:
 
-
-   test_repositories
-   modules
+   SciXgrpc.repositories
+   SciXtest.repositories
+   SciXTEMPLATE
 
 .. role:: raw-html-m2r(raw)
    :format: html

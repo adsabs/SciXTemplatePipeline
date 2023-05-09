@@ -5,4 +5,3 @@ SciXTemplatePipeline
    :maxdepth: 4
 
    SciXTEMPLATE
-   setup

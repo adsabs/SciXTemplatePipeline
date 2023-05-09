@@ -28,23 +28,13 @@ SciXTemplatePipeline
    :alt: Coverage Status
 
 
-The Template Test Environment
+The gRPC Backend
 ====================================
 
-The Template API Tests
+The Template gRPC API
 ---------------------------------
 
-Running ``gRPC`` tests currently requires implementing a fake gRPC server. To save some pain in that regard, the ``tests/API/test_template_server.py`` file contains a full mock server that is instantiated when ``pytest`` is run and torn down when all the tests in ``TemplateServer`` have completed.
-
-.. code-block:: bash
-
-   virtualenv .venv
-   source .venv/bin/activate
-   pip install .[dev]
-   pip install .
-   pre-commit install
-   pre-commit install --hook-type commit-msg
-
+Because we are using ``AVRO`` instead of ``protobufs``, we cannot take advantage of the automatic API generation that ``gRPC`` offers. To help defray some of the cost of manually creating the API code, we have included some boilerplate code that initializes an ``INIT`` method, as well as a ``MONITOR`` method.
 
 Maintainers
 -----------
