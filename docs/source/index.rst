@@ -18,8 +18,6 @@ SciXTemplatePipeline
 .. role:: raw-html-m2r(raw)
    :format: html
 
-
-
 .. image:: https://github.com/tjacovich/SciXTemplateRepository/actions/workflows/python_actions.yml/badge.svg
    :target: https://github.com/tjacovich/SciXTemplateRepository/actions/workflows/python_actions.yml
    :alt: Python CI actions
@@ -27,3 +25,15 @@ SciXTemplatePipeline
 .. image:: https://coveralls.io/repos/github/tjacovich/SciXTemplateRepository/badge.svg?branch=main
    :target: https://coveralls.io/github/tjacovich/SciXTemplateRepository?branch=main
    :alt: Coverage Status
+
+Maintainers
+-----------
+
+First Last
+
+Indices and tables
+==================
+
+* :ref:`genindex`
+* :ref:`modindex`
+* :ref:`search`

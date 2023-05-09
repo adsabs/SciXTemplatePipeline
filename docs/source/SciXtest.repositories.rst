@@ -6,15 +6,6 @@
 The Template Test Environment
 ====================================
 
-.. toctree::
-   :maxdepth: 2
-   :caption: Contents
-
-.. role:: raw-html-m2r(raw)
-   :format: html
-
-
-
 .. image:: https://github.com/tjacovich/SciXTemplateRepository/actions/workflows/python_actions.yml/badge.svg
    :target: https://github.com/tjacovich/SciXTemplateRepository/actions/workflows/python_actions.yml
    :alt: Python CI actions
@@ -73,16 +64,3 @@ Running ``gRPC`` tests currently requires implementing a fake gRPC server. To sa
         self.port = 55551
         self.server.add_insecure_port(f"[::]:{self.port}")
         self.server.start()
-
-
-Maintainers
------------
-
-First Last
-
-Indices and tables
-==================
-
-* :ref:`genindex`
-* :ref:`modindex`
-* :ref:`search`

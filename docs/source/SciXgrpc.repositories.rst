@@ -21,15 +21,3 @@ The Template gRPC API
 ---------------------------------
 
 Because we are using ``AVRO`` instead of ``protobufs``, we cannot take advantage of the automatic API generation that ``gRPC`` offers. To help defray some of the cost of manually creating the API code, we have included some boilerplate code that initializes an ``INIT`` method, as well as a ``MONITOR`` method.
-
-Maintainers
------------
-
-First Last
-
-Indices and tables
-==================
-
-* :ref:`genindex`
-* :ref:`modindex`
-* :ref:`search`
