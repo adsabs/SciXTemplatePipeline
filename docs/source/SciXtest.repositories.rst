@@ -3,8 +3,8 @@
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-SciXTemplatePipeline
-================================================
+The Template Test Environment
+====================================
 
 .. toctree::
    :maxdepth: 2
@@ -23,9 +23,6 @@ SciXTemplatePipeline
    :target: https://coveralls.io/github/tjacovich/SciXTemplateRepository?branch=main
    :alt: Coverage Status
 
-
-The Template Test Environment
-====================================
 
 The Template API Tests
 ---------------------------------
