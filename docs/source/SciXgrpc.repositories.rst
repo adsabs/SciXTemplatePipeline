@@ -23,14 +23,21 @@ The Template gRPC API
 Because we are using ``AVRO`` instead of ``protobufs``, we cannot take advantage of the automatic API generation that ``gRPC`` offers. To help defray some of the cost of manually creating the API code, we have included some boilerplate code that initializes an ``INIT`` method, as well as a ``MONITOR`` method.
 
 The API classes live in ``grpc_modules/template_grpc.py`` Each endpoint needs a ``Stub``, a ``Servicer``, a function that adds the endpoint to the ``gRPC`` server, as well as a main class that instantiates the grpc stream.
+
 .. code-block:: python
 
    class TemplateInitStub(object):
+      """The Stub for connecting to the Template init service."""
       def __init__(self, channel, avroserialhelper):
+         """Constructor.
+         Args
+         channel A grpc.Channel.
+         """
          self.initTemplate = channel.unary_stream(
             "/templateaapi.TemplateInit/initTemplate",
             request_serializer=avroserialhelper.avro_serializer,
-            response_deserializer=avroserialhelper.avro_deserializer,)
+            response_deserializer=avroserialhelper.avro_deserializer,
+         )
 
 .. code-block:: python
 
