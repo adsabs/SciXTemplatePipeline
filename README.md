@@ -6,6 +6,8 @@
 
 **You will also want to change the directory and file names for everything that is `template` as these should have names that reflect the actual name of the pipeline.**
 
+**Once the new repository is created, make sure that Settings>Actions>General>Workflow permissions is set to Read and Write Permisions or else the labels github action will fail.**
+
 This project uses `pyproject.toml` to install necessary dependencies and otherwise set up a working development environment. To set up a local working environment, simply run the following:
 ```bash
 virtualenv .venv
