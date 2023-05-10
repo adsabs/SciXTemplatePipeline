@@ -22,7 +22,7 @@ The Template gRPC API
 
 Because we are using ``AVRO`` instead of ``protobufs``, we cannot take advantage of the automatic API generation that ``gRPC`` offers. To help defray some of the cost of manually creating the API code, we have included some boilerplate code that initializes an ``INIT`` method, as well as a ``MONITOR`` method.
 
-The API classes live in ``grpc_modules/template_grpc.py`` Each endpoint needs a ``Stub``, a ``Servicer``, a function that adds the endpoint to the ``gRPC`` server, as well as a main class that instantiates the grpc stream.
+The API classes live in ``grpc_modules/template_grpc.py`` Each endpoint needs a ``Stub``, a ``Servicer``, a function that adds the endpoint to the ``gRPC`` server, as well as a main class that instantiates the ``gRPC`` stream. A discussion of how these are instantiated in the server can be found in :doc:`SciXtest.repositories` in the section describing the test :ref:`gRPC Server <APItests>`.
 
 .. code-block:: python
 

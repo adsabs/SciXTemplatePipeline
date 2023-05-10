@@ -15,6 +15,8 @@ The Template Test Environment
    :alt: Coverage Status
 
 
+.. _APItests:
+
 The Template API Tests
 ---------------------------------
 
