@@ -15,10 +15,10 @@ from confluent_kafka.avro import AvroProducer
 from confluent_kafka.schema_registry import SchemaRegistryClient
 from confluent_kafka.schema_registry.avro import AvroSerializer
 from SciXPipelineUtils import utils
+from SciXPipelineUtils.avro_serializer import AvroSerialHelper
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
 
-from API.avro_serializer import AvroSerialHelper
 from API.grpc_modules.template_grpc import (
     TemplateInitServicer,
     add_TemplateInitServicer_to_server,

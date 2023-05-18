@@ -7,7 +7,7 @@ on:
   pull_request:
 env:
   PGDATABASE: template
-  PGPASSWORD: postgres
+  PGPASSWORD: TEMPLATE
   PGUSER: postgres
   PGHOST: localhost
   PGPORT: 5432
