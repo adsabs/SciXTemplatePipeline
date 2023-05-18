@@ -23,6 +23,13 @@ Installing dependencies and hooks
 
 **You will also want to change the directory and file names for everything that is ``template`` as these should have names that reflect the actual name of the pipeline.**
 
+**To generate documentation for the ``docs_branch`` run the following:**
+
+.. code-block:: bash
+
+   sphinx-apidoc -o docs/source/  ./ --force
+
+
 This project uses ``pyproject.toml`` to install necessary dependencies and otherwise set up a working development environment. To set up a local working environment, simply run the following:
 
 .. code-block:: bash
