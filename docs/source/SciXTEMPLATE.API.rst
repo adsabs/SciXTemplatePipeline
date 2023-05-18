@@ -12,14 +12,6 @@ Subpackages
 Submodules
 ----------
 
-SciXTEMPLATE.API.avro\_serializer module
-----------------------------------------
-
-.. automodule:: SciXTEMPLATE.API.avro_serializer
-   :members:
-   :undoc-members:
-   :show-inheritance:
-
 SciXTEMPLATE.API.template\_client module
 ----------------------------------------
 
