@@ -31,7 +31,7 @@ dependencies = [
     'six==1.16.0',
     'python-dateutil==2.8.1',
     'requests==2.29.0',
-    'git+https://github.com/tjacovich/SciXPipelineUtils.git@main'
+    'SciXPipelineUtils @ git+https://github.com/tjacovich/SciXPipelineUtils.git@main'
 ]
 
 [project.urls]
