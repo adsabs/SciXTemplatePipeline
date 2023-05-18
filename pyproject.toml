@@ -23,7 +23,6 @@ dependencies = [
     'fastavro==1.7.2',
     'avro==1.11.1',
     'redis==4.5.4',
-    'boto3==1.26.59',
     'adsingestp @ git+https://github.com/adsabs/ADSIngestParser.git@b1b18900e5c70b0c3f044443bed53b53c73942f4',
     'alembic==1.8.1',
     'sqlalchemy==1.3.16',
@@ -32,6 +31,7 @@ dependencies = [
     'six==1.16.0',
     'python-dateutil==2.8.1',
     'requests==2.29.0',
+    'git+https://github.com/tjacovich/SciXPipelineUtils.git@main'
 ]
 
 [project.urls]

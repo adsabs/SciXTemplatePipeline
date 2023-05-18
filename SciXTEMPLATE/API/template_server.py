@@ -14,6 +14,7 @@ import redis
 from confluent_kafka.avro import AvroProducer
 from confluent_kafka.schema_registry import SchemaRegistryClient
 from confluent_kafka.schema_registry.avro import AvroSerializer
+from SciXPipelineUtils import utils
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
 
@@ -23,7 +24,7 @@ from API.grpc_modules.template_grpc import (
     add_TemplateInitServicer_to_server,
     add_TemplateMonitorServicer_to_server,
 )
-from TEMPLATE import db, utils
+from TEMPLATE import db
 
 HERE = Path(__file__).parent
 proj_home = str(HERE / "..")

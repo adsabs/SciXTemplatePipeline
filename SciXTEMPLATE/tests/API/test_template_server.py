@@ -7,10 +7,10 @@ import pytest
 from confluent_kafka.avro import AvroProducer
 from confluent_kafka.schema_registry import Schema
 from mock import patch
+from SciXPipelineUtils.utils import get_schema
 
 from API.avro_serializer import AvroSerialHelper
 from API.grpc_modules import template_grpc
-from API.template_client import get_schema
 from API.template_server import Listener, Logging, Template
 from TEMPLATE import db
 from tests.API import base
