@@ -28,26 +28,10 @@ SciXTEMPLATE.TEMPLATE.models module
    :undoc-members:
    :show-inheritance:
 
-SciXTEMPLATE.TEMPLATE.s3\_methods module
-----------------------------------------
-
-.. automodule:: SciXTEMPLATE.TEMPLATE.s3_methods
-   :members:
-   :undoc-members:
-   :show-inheritance:
-
 SciXTEMPLATE.TEMPLATE.template module
 -------------------------------------
 
 .. automodule:: SciXTEMPLATE.TEMPLATE.template
-   :members:
-   :undoc-members:
-   :show-inheritance:
-
-SciXTEMPLATE.TEMPLATE.utils module
-----------------------------------
-
-.. automodule:: SciXTEMPLATE.TEMPLATE.utils
    :members:
    :undoc-members:
    :show-inheritance:
