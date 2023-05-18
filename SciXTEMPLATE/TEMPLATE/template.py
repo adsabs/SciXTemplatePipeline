@@ -7,11 +7,12 @@ from datetime import datetime
 import redis
 from confluent_kafka.avro import AvroConsumer, AvroProducer
 from confluent_kafka.schema_registry import SchemaRegistryClient
+from SciXPipelineUtils import utils
+from SciXPipelineUtils.s3_methods import load_s3
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
 
-from TEMPLATE import db, utils
-from TEMPLATE.s3_methods import load_s3
+from TEMPLATE import db
 
 
 def init_pipeline(proj_home):
