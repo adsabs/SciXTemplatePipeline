@@ -5,7 +5,7 @@ description = "The primary TEMPLATE unit for the new NASA Science Explorer (NASA
 authors = [{ name = "First Last", email = "name@domain.root"}]
 license = { text = "GPL-3.0" }
 readme = "README.md"
-#repository = "https://github.com/tjacovich/SciXTEMPLATEPipeline"
+#repository = "https://github.com/adsabs/SciXTEMPLATEPipeline"
 classifiers = [
     "Development Status :: 2 - Pre-Alpha",
     "Intended Audience :: Developers",
@@ -31,11 +31,11 @@ dependencies = [
     'six==1.16.0',
     'python-dateutil==2.8.1',
     'requests==2.29.0',
-    'SciXPipelineUtils @ git+https://github.com/tjacovich/SciXPipelineUtils.git@main'
+    'SciXPipelineUtils @ git+https://github.com/adsabs/SciXPipelineUtils.git@main'
 ]
 
 [project.urls]
-Source = "https://github.com/tjacovich/SciXTEMPLATEPipeline"
+Source = "https://github.com/adsabs/SciXTEMPLATEPipeline"
 
 [project.optional-dependencies]
 dev = [
