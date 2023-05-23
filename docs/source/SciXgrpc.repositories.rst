@@ -7,12 +7,12 @@ The gRPC Backend
 ====================================
 
 
-.. image:: https://github.com/tjacovich/SciXTemplateRepository/actions/workflows/python_actions.yml/badge.svg
-   :target: https://github.com/tjacovich/SciXTemplateRepository/actions/workflows/python_actions.yml
+.. image:: https://github.com/adsabs/SciXTemplatePipeline/actions/workflows/python_actions.yml/badge.svg
+   :target: https://github.com/adsabs/SciXTemplatePipeline/actions/workflows/python_actions.yml
    :alt: Python CI actions
 
-.. image:: https://coveralls.io/repos/github/tjacovich/SciXTemplateRepository/badge.svg?branch=main
-   :target: https://coveralls.io/github/tjacovich/SciXTemplateRepository?branch=main
+.. image:: https://coveralls.io/repos/github/adsabs/SciXTemplatePipeline/badge.svg?branch=main
+   :target: https://coveralls.io/github/adsabs/SciXTemplatePipeline?branch=main
    :alt: Coverage Status
 
 
