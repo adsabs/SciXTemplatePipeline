@@ -8,6 +8,10 @@
 
 **Once the new repository is created, make sure that Settings>Actions>General>Workflow permissions is set to Read and Write Permisions or else the labels github action will fail.**
 
+**To generate documentation for the `docs_branch` run the following:**
+```bash
+sphinx-apidoc -o docs/source/  ./ --force
+```
 This project uses `pyproject.toml` to install necessary dependencies and otherwise set up a working development environment. To set up a local working environment, simply run the following:
 ```bash
 virtualenv .venv
